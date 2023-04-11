@@ -41,30 +41,78 @@
                 <input type="text"; name="Agregar Descripcion"; class="agregar_descripcion"; id="descripcion">
                 <input type="number"; class="agregar_valor"; value="valor"; step="any">
                 <button class="agregar_btn">
-
+                   <ion-icon name="checkmark-circle-outline"></ion-icon> 
                 </button>
             </div>
         </div>
     </form> 
 
-    <div class="contenedor; limpiarEstilos">
+    <div class="limpiarEstilos; contenedor">
         <div class="ingreso">
             <h2 class="ingreso_titulo">Ingresos</h2>
 
             <div id="lista-ingresos">
-                <div class="elemento; limpiarEstilos">
-                    <div class=elemento_descripcion">Salario</div>
-                    <div class="limpiarEstilos; derecha"> 
-                        <div class="elemento_valor">+2,200.00</div>
-                        <div class="elemento_eliminar"><button class="elemento_eliminar_btn">botonIcon</button></div>
+                <div class="limpiarEstilos; elemento">
+                    <div class=elemento_descripcion">Salario
+                        <div class="limpiarEstilos; derecha"> 
+                            <div class="elemento_valor">+2,200.00</div>
+                            <div class="elemento_eliminar">
+                                <button class="elemento_eliminar--btn">
+                                <ion-icon name="close-circle-outline"></ion-icon>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="limpiarEstilos; elemento">
+                    <div class=elemento_descripcion">Venta Coche
+                        <div class="limpiarEstilos; derecha"> 
+                            <div class="elemento_valor">+1,500.00</div>
+                            <div class="elemento_eliminar">
+                                <button class="elemento_eliminar--btn">
+                                <ion-icon name="close-circle-outline"></ion-icon>
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
             
         </div>
-        <div class="egreso"></div>
-             <h2 class="ingreso_titulo">Egresos</h2>
+        <div class="egreso">
+             <h2 class="egreso_titulo">Egresos</h2>
+             
+             <div id="lista-ingresos">
+                <div class="limpiarEstilos; elemento">
+                    <div class=elemento_descripcion">Renta Departamento
+                        <div class="limpiarEstilos; derecha"> 
+                            <div class="elemento_valor">-900.00</div>
+                            <div class="elemento_porcentaje">21%</div>
+                            <div class="elemento_eliminar">
+                                <button class="elemento_eliminar--btn">
+                                <ion-icon name="close-circle-outline"></ion-icon>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="limpiarEstilos; elemento">
+                    <div class=elemento_descripcion">Ropa
+                        <div class="limpiarEstilos; derecha"> 
+                            <div class="elemento_valor">-400.00</div>
+                            <div class="elemento_porcentaje">9%</div>
+                            <div class="elemento_eliminar">
+                                <button class="elemento_eliminar--btn">
+                                <ion-icon name="close-circle-outline"></ion-icon>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script type="module" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"></script>

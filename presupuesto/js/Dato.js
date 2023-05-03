@@ -1,4 +1,4 @@
-var _privado = new WeakMap()
+var _private = new WeakMap()
 
 class Dato {
     propiedades = {};
@@ -11,18 +11,18 @@ class Dato {
     }
 
     get descripcion (){
-        return _privado.get(this).propiedades._descripcion;
+        return _private.get(this).propiedades._descripcion;
     }
 
     set descripcion (newDescripcion){
-        return _privado.get(this).propiedades['_descripcion'] = newDescripcion;
+        return _private.get(this).propiedades['_descripcion'] = newDescripcion;
     }
 
     get valor (){
-        return _privado.get(this).propiedades._valor;
+        return _private.get(this).propiedades._valor;
     }
 
     set valor (newValor){
-        return _privado.get(this).propiedades['_valor'] = newValor;
+        return _private.get(this).propiedades['_valor'] = newValor;
     }
 }

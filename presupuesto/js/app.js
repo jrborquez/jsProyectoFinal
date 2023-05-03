@@ -1,8 +1,7 @@
 var presupuesto = 0;
 var porcentajeEgreso = 0;
-let egresos = {Ropa: 400, Renta: 900};
-let ingresos = {Quincena: 9000, Venta: 400};
-
+let egresos = [('Renta',4000),('Ropa',800)];
+let ingresos = [('Salario',20000),('Venta auto',50000)];
 
 const cargarCabecero = () =>  {
     presupuesto = totalIngresos() - totalEgresos();

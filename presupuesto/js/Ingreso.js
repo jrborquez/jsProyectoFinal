@@ -1,24 +1,13 @@
-
-//let _id = new WeakMap
-
 class Ingreso extends Dato {
    
-    contadorIngresos = 0;
-    _id = 0;
-
+    static contadorIngresos = 0;
+   
     constructor (descripcion,valor){
         super(descripcion,valor);
-        
-        //this._id = id;
-        //_id.set(this.id);
+        this._id = ++Ingreso.contadorIngresos;
     }
 
-    contadorIng = () => {
-        contadorIngresos++;
-        this._id = contadorIngresos;
-    }
-
-    get _id (){
+    get id (){
         return this._id;
     }
 }

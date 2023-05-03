@@ -2,21 +2,15 @@
 class Egreso extends Dato {
     
     contadorEgresos = 0;
-    _id = 0;
 
     constructor (descripcion,valor){
         super(descripcion,valor);
-        //this._id = id;
-
-        //_id.set(this.id);
+        this._id = ++Egreso.contadorEgresos;
+       
     }
 
-    contadorEg = () => {
-        contadorEgresos++;
-        this._id = contadorEgresos;
-    }
 
-    get _id (){
+    get id (){
         return this._id;
     }
 }

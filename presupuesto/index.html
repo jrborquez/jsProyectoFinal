@@ -6,29 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Presupuesto</title>
     <link rel="stylesheet" href="css/estilos.css">
-    <script src="js/app.js"></script>
     <script src="js/Dato.js"></script>
     <script src="js/Ingreso.js"></script>
     <script src="js/Egreso.js"></script>
+    <script src="js/app.js"></script>
 </head>
-<body>
+<body onload="cargarApp()">
     <div class="cabecero">
         <div class="presupuesto">
             <div class="presupuesto_titulo">Presupuesto Disponible</div>
-            <div class="presupuesto_valor">+2,000.00</div>
+            <div class="presupuesto_valor" id="presupuesto"></div>
                 <div class="limpiarEstilos">
                     <div class="presupuesto_ingreso--texto; presupuesto_ingreso">Ingresos
                         <div class="derecha">
-                            <div class="presupuesto_ingreso--valor">+4,000.00</div>
-                            <div class="presupuesto_ingreso--porcentaje">&nbsp;</div>
+                            <div class="presupuesto_ingreso--valor" id="ingresos"></div>
+                            <div class="presupuesto_ingreso--porcentaje"></div>
                         </div>
                     </div>
                 </div>
                 <div class="limpiarEstilos">
                     <div class="presupuesto_egreso--texto; presupuesto_egreso">Egresos
                         <div class="derecha">
-                            <div class="presupuesto_egreso--valor">-1,900.00</div>
-                            <div class="presupuesto_egreso--porcentaje">45%</div>
+                            <div class="presupuesto_egreso--valor" id="egresos"></div>
+                            <div class="presupuesto_egreso--porcentaje" id="porcentajeEgreso"></div>
                         </div>
                     </div>
                 </div>
@@ -57,56 +57,29 @@
 
             <div id="lista-ingresos">
                 <div class="limpiarEstilos; elemento">
-                    <div class=elemento_descripcion">Salario
+                    <div class=elemento_descripcion">
                         <div class="limpiarEstilos; derecha"> 
-                            <div class="elemento_valor">+2,200.00</div>
+                            <div class="elemento_valor"></div>
                             <div class="elemento_eliminar">
                                 <button class="elemento_eliminar--btn">
-                                <ion-icon name="close-circle-outline"></ion-icon>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="limpiarEstilos; elemento">
-                    <div class=elemento_descripcion">Venta Coche
-                        <div class="limpiarEstilos; derecha"> 
-                            <div class="elemento_valor">+1,500.00</div>
-                            <div class="elemento_eliminar">
-                                <button class="elemento_eliminar--btn">
-                                <ion-icon name="close-circle-outline" />
+                                    <ion-icon name="close-circle-outline"></ion-icon>
                                 </button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            
         </div>
+
         <div class="egreso">
              <h2 class="egreso_titulo">Egresos</h2>
              
-             <div id="lista-ingresos">
+             <div id="lista-egresos">
                 <div class="limpiarEstilos; elemento">
-                    <div class=elemento_descripcion">Renta Departamento
+                    <div class=elemento_descripcion">
                         <div class="limpiarEstilos; derecha"> 
-                            <div class="elemento_valor">-900.00</div>
-                            <div class="elemento_porcentaje">21%</div>
-                            <div class="elemento_eliminar">
-                                <button class="elemento_eliminar--btn">
-                                <ion-icon name="close-circle-outline"></ion-icon>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="limpiarEstilos; elemento">
-                    <div class=elemento_descripcion">Ropa
-                        <div class="limpiarEstilos; derecha"> 
-                            <div class="elemento_valor">-400.00</div>
-                            <div class="elemento_porcentaje">9%</div>
+                            <div class="elemento_valor"></div>
+                            <div class="elemento_porcentaje"></div>
                             <div class="elemento_eliminar">
                                 <button class="elemento_eliminar--btn">
                                 <ion-icon name="close-circle-outline"></ion-icon>

@@ -1,28 +1,25 @@
-var _private = new WeakMap()
+
 
 class Dato {
-    propiedades = {};
-
+    
     constructor ( descripcion, valor ) {
-        this.propiedades._descripcion = descripcion;
-        this.propiedades._valor = valor;
-
-        _private.set(this,{propiedades: this.propiedades});
+        this._descripcion = descripcion;
+        this._valor = valor;
     }
 
     get descripcion (){
-        return _private.get(this).propiedades._descripcion;
+        return this._descripcion;
     }
 
-    set descripcion (newDescripcion){
-        return _private.get(this).propiedades['_descripcion'] = newDescripcion;
+    set descripcion (descripcion){
+        this._descripcion = this.descripcion;
     }
 
     get valor (){
-        return _private.get(this).propiedades._valor;
+        return this._valor;
     }
 
-    set valor (newValor){
-        return _private.get(this).propiedades['_valor'] = newValor;
+    set valor (valor){
+        this._valor = valor;
     }
 }

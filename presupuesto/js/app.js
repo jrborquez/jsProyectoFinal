@@ -115,22 +115,24 @@ const eliminarEgreso = (id) => {
 }
 
 const agregarDato = () => {
-        let forma = document.getElementById('#forma');
-        let tipo = document.querySelector('#tipo');
-        let descripcion = document.getElementById('#descripcion');
-        let valor = document.getElementById('#valor');
+        const forma = document.getElementById('forma');
+        console.log(forma);
+        let tipo = forma.tipo.value;
+        let descripcion = document.getElementById('descripcion');
+        let valor = document.getElementById('valor');
 
         if(descripcion !== '' || valor !== 0){
-                if(tipo === 'ingreso'){
+                if(tipo.value === 'ingreso'){
                         ingresos.push(new Ingreso (descripcion,valor));
                         
                 }else{
                         egresos.push(new Egreso (descripcion,valor));
                 }       
         };
-        if(descripcion === '' || valor === 0){
-                alert('La descripción y/o valor está vacía.  Por favor ingrese un concepto');
-        };
+
+        document.getElementById("descripcion").value = "";
+        document.getElementById("cantidad").value = "";
+
         cargarCabecero();
         cargarIngresos();
         }

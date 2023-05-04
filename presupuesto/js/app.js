@@ -1,7 +1,10 @@
 var presupuesto = 0;
 var porcentajeEgreso = 0;
-let egresos = [new Egreso ('Renta',40000),new Egreso ('Ropa',9200)];
-let ingresos = [new Ingreso ('Salario',20000),new Ingreso('Venta auto',50000), new Ingreso('Rentas',80000)];
+let egresos = [];
+let ingresos = [];
+
+//let egresos = [new Egreso ('Renta',40000),new Egreso ('Ropa',9200)];
+//let ingresos = [new Ingreso ('Salario',20000),new Ingreso('Venta auto',50000), new Ingreso('Rentas',80000)];
 
 const cargarCabecero = () =>  {
     presupuesto = totalIngresos() - totalEgresos();
@@ -99,8 +102,6 @@ const crearEgresoHTML = (egreso) => {
 };
 
 
-
-
 const eliminarIngreso = (id) => {
         let indiceEliminar = ingresos.findIndex(ingreso => ingreso.id === id);
         ingresos.splice(indiceEliminar, 1);
@@ -116,25 +117,27 @@ const eliminarEgreso = (id) => {
 
 const agregarDato = () => {
         const forma = document.getElementById('forma');
-        console.log(forma);
         let tipo = forma.tipo.value;
-        let descripcion = document.getElementById('descripcion');
-        let valor = document.getElementById('valor');
-
-        if(descripcion !== '' || valor !== 0){
-                if(tipo.value === 'ingreso'){
-                        ingresos.push(new Ingreso (descripcion,valor));
+        let descripcion = forma.descripcion.value;
+        let valor = parseFloat(forma.cant.value);
+        
+        if(descripcion !== '' && valor !== 0) {
+                if(tipo === 'ingreso'){
+                        ingresos.push (new Ingreso (descripcion,valor));
                         
-                }else{
-                        egresos.push(new Egreso (descripcion,valor));
-                }       
+                }else if(tipo === "egreso") {
+                        egresos.push (new Egreso (descripcion,valor));                        
+                }      
+        }else{
+                console.log('Descripción o Valor Vacío');
         };
-
-        document.getElementById("descripcion").value = "";
-        document.getElementById("cantidad").value = "";
-
         cargarCabecero();
         cargarIngresos();
+        cargarEgresos();
+
+        forma.reset ();
+        return false;
+
         }
 
 const cargarApp = () => { 

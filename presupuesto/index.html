@@ -35,17 +35,17 @@
         </div>
     </div>
 
-    <form id="forma">
+    <form id="forma" onsubmit="return false">
         <div class="agregar">
             <div class="agregar_contenedor">
-                <select class="agregar_tipo"; id="tipo">
+                <select class="agregar_tipo" id="tipo">
                     <option value="ingreso" selected>+</option>
                     <option value="egreso">-</option>
                 </select>
                 <input type="text"; name="Agregar Descripcion"; class="agregar_descripcion"; id="descripcion">
                 <input type="number"; class="agregar_valor"; value="valor"; step="any">
-                <button class="agregar_btn">
-                   <ion-icon name="checkmark-circle-outline" /> 
+                <button class="agregar_btn"  >
+                   <ion-icon name="checkmark-circle-outline" onclick="agregarDato()"/> 
                 </button>
             </div>
         </div>
@@ -62,7 +62,7 @@
                             <div class="elemento_valor"></div>
                             <div class="elemento_eliminar">
                                 <button class="elemento_eliminar--btn">
-                                    <ion-icon name="close-circle-outline"></ion-icon>
+                                    <ion-icon name="close-circle-outline" />
                                 </button>
                             </div>
                         </div>
@@ -82,7 +82,7 @@
                             <div class="elemento_porcentaje"></div>
                             <div class="elemento_eliminar">
                                 <button class="elemento_eliminar--btn">
-                                <ion-icon name="close-circle-outline"></ion-icon>
+                                <ion-icon name="close-circle-outline"/>
                                 </button>
                             </div>
                         </div>

@@ -41,7 +41,6 @@ const formatoPorcentaje = (porcentaje) => {
 };
 
 
-
 const cargarIngresos = () => {
         let ingresosHTML = '';
 
@@ -100,19 +99,41 @@ const crearEgresoHTML = (egreso) => {
 };
 
 
+
+
 const eliminarIngreso = (id) => {
         let indiceEliminar = ingresos.findIndex(ingreso => ingreso.id === id);
-        ingresos.splice(indiceEliminar, 1)
+        ingresos.splice(indiceEliminar, 1);
         cargarCabecero();
         cargarIngresos();
-}
+};
 const eliminarEgreso = (id) => {
         let indiceEliminar = egresos.findIndex(egreso => egreso.id === id);
-        egresos.splice(indiceEliminar, 1)
+        egresos.splice(indiceEliminar, 1);
         cargarCabecero();
         cargarEgresos();
 }
 
+const agregarDato = () => {
+        let forma = document.getElementById('#forma');
+        let tipo = document.querySelector('#tipo');
+        let descripcion = document.getElementById('#descripcion');
+        let valor = document.getElementById('#valor');
+
+        if(descripcion !== '' || valor !== 0){
+                if(tipo === 'ingreso'){
+                        ingresos.push(new Ingreso (descripcion,valor));
+                        
+                }else{
+                        egresos.push(new Egreso (descripcion,valor));
+                }       
+        };
+        if(descripcion === '' || valor === 0){
+                alert('La descripción y/o valor está vacía.  Por favor ingrese un concepto');
+        };
+        cargarCabecero();
+        cargarIngresos();
+        }
 
 const cargarApp = () => { 
         cargarCabecero();

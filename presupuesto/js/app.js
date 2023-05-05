@@ -49,7 +49,7 @@ const cargarIngresos = () => {
 
         for (let ingreso of ingresos) {
                 ingresosHTML += crearIngresoHTML(ingreso);
-                console.log(ingreso._descripcion, ingreso._valor);
+                //console.log(ingreso._descripcion, ingreso._valor);
         }
         document.getElementById('lista-ingresos').innerHTML = ingresosHTML;
 };
@@ -77,7 +77,7 @@ const cargarEgresos = () => {
 
         for (let egreso of egresos) {
                 egresosHTML += crearEgresoHTML(egreso);
-                console.log(egreso._descripcion, egreso._valor);
+                //console.log(egreso._descripcion, egreso._valor);
         }
         document.getElementById('lista-egresos').innerHTML = egresosHTML;
 };
@@ -129,7 +129,7 @@ const agregarDato = () => {
                         egresos.push (new Egreso (descripcion,valor));                        
                 }      
         }else{
-                console.log('Descripción o Valor Vacío');
+                alert('Descripción o Valor Vacío');
         };
         cargarCabecero();
         cargarIngresos();

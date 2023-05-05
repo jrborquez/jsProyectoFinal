@@ -121,7 +121,7 @@ const agregarDato = () => {
         let descripcion = forma.descripcion.value;
         let valor = parseFloat(forma.cant.value);
         
-        if(descripcion !== '' && valor !== 0 & valor > 0 && isNaN(valor) == false) {
+        if(descripcion !== '' && valor !== 0 && valor > 0 && isNaN(valor) == false) {
                 if(tipo === 'ingreso'){
                         ingresos.push (new Ingreso (descripcion,valor));
                         

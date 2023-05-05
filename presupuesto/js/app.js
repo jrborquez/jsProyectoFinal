@@ -34,7 +34,7 @@ const totalEgresos = () => {
 };
 
 const formatoMoneda = (numero) => {
-        numero = numero.toLocaleString('es-MX', {style: 'currency',currency: 'MXN', minimumFractionDigits: 2});
+        numero = (numero.toLocaleString('es-MX', {style: 'currency',currency: 'MXN', minimumFractionDigits: 2})+ ' MXN');
         return numero;
 }
 
